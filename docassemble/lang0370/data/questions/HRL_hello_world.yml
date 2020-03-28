@@ -1,0 +1,9 @@
+---
+# My first Doccassemble code
+mandatory: True
+question: Hello World!
+subquestion: |
+ Hello Holly.
+ 
+ Welcome to Doccassemble!
+ ---
