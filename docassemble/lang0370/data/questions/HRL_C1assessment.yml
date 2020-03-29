@@ -1,0 +1,51 @@
+---
+# My first Docassemble program
+mandatory: True
+question: Supreme Court Documents r Us 
+subquestion: |
+  ### Welcome to Supreme Court Documents R Us!
+
+  Dear ${ HRLsalutation + ' ' + HRLfirstlastname },
+
+  Below are the answers to your questions.
+
+
+  Question|Answer
+  --------|------
+  Salutation|${ HRLsalutation }
+  First and Last Name|${ HRLfirstlastname }
+  Position|${ HRLposition }
+  First and Last Name of other party|${ OPfirstnamelastname }
+  Position of other party|${ OPposition }
+  Document Type|${ HRLdocument }
+  Filed on behalf of the|${ HRLrole }
+  Address of applicant|${ HRLaddress }
+  Phone Number of applicant|${ HRLphone }
+  Date and time of filing|${ HRLdatetime }
+attachment:
+  docx template file: Ex1e._Form_1_-_Final.docx
+  valid formats:
+  - pdf
+buttons:
+  - I'm done: exit
+    url: https://flinders.edu.au
+  - Do it again: restart
+---
+question: Interview Questions 
+fields:
+  - Salutation: HRLsalutation
+    choices:
+      - Dr
+      - Mr
+      - Mrs
+      - Ms
+  - Position (plaintiff/appellant/application): HRLposition
+  - First Name and Last Name: HRLfirstlastname
+  - Position of other party: OPposition
+  - First Name and Last Name of other party: OPfirstnamelastname
+  - Document type (summons/third party notice/notice of appeal: HRLdocument
+  - Filed on behalf of the (role of party and name or solicitor and name): HRLrole
+  - Address of applicant: HRLaddress
+  - Phone number of applicant: HRLphone
+  - Date and time of filing: HRLdatetime
+---
