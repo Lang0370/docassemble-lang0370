@@ -1,0 +1,38 @@
+---
+objects:
+  - endpoint: DADict
+---
+mandatory: True
+continue button field: target_variable
+question: |
+ Welcome to the Court Form Inputter.
+subquestion: |
+ *The Court Form Inputter* assists in the completion of Australian Court Forms.
+ 
+  ***Disclaimer:***
+  **This advice is not to be taken as genuine legal advice and is not a substitute
+  for you seeking independent legal advice. It is recommended that you have your form checked by a lawyer before submission.**
+  
+  If you continue you accept these terms.
+buttons: 
+  - "Continue": continue
+  - "Exit": exit
+    url: http://www.courts.sa.gov.au/Pages/default.aspx
+---
+mandatory: True
+code: |
+  if HRLwhichcourt == 'Supreme Court':
+    endpoint['eligible']
+  else:
+    endpoint['ineligible']
+---
+mandatory: True
+question: For which court does the form need to be completed?
+fields:
+  - no label: HRLwhichcourt
+    choices:
+      - Magistrates Court
+      - District Court
+      - Supreme Court
+      - Federal Circuit Court
+      - Federal Court
